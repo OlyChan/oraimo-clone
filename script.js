@@ -1,4 +1,38 @@
-// function product() {
+let counter = 1;
+      const totalSlides = 3;
+
+      setInterval(() => {
+        document.getElementById("slide1-" + counter).checked = true;
+        counter++;
+        if (counter > totalSlides) {
+          counter = 1;
+        }
+      }, 3000); // Change every 3 seconds
+
+      let secondCounter = 1;
+      const secondTotalSlides = 5;
+
+      setInterval(() => {
+        document.getElementById("slide2-" + secondCounter).checked = true;
+        secondCounter++;
+        if (secondCounter > secondTotalSlides) {
+          secondCounter = 1;
+        }
+      }, 2000); // Change every 2 seconds
+
+
+      let mobileCounter = 1;
+      const mobileTotalSlides = 3;
+
+      setInterval(() => {
+        document.getElementById("slidem-" + mobileCounter).checked = true;
+        mobileCounter++;
+        if (mobileCounter > mobileTotalSlides) {
+          mobileCounter = 1;
+        }
+      }, 2000); // Change every 2 seconds
+     
+      // function product() {
 //   let products = document.getElementById("products");
 
 //   const productHover = document.createElement("div"); //create the element
@@ -429,3 +463,123 @@ let countdownFunction = setInterval(function() {
     document.getElementById("countdown").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+function menuOpen(){
+
+  const main_header = document.querySelector('.main-header')
+  const header_logo = document.querySelector('#header-logo')
+  const header_nav = document.querySelector('.main-header nav')
+  const mobile_menu = document.createElement('div')
+  const mobile_menu_header = document.createElement('div')
+  const empty_div = document.createElement('div')
+  const menu_close_link = document.createElement('a')
+  const menu_close_icon = document.createElement('span')
+
+  mobile_menu.classList.add('mobile-menu')
+  mobile_menu_header.classList.add('mobile-menu-header')
+  empty_div.classList.add('empty-div')
+  menu_close_icon.classList.add('material-symbols-outlined')
+  menu_close_icon.textContent = 'close'
+
+  mobile_menu_header.appendChild(menu_close_link)
+  menu_close_link.appendChild(menu_close_icon)
+  mobile_menu_header.appendChild(header_logo.cloneNode(true));
+  // mobile_menu_header.appendChild(header_logo)
+  mobile_menu.appendChild(mobile_menu_header)
+  mobile_menu_header.appendChild(empty_div)
+  // mobile_menu.appendChild(header_nav)
+  mobile_menu.appendChild(header_nav.cloneNode(true));
+  main_header.appendChild(mobile_menu)
+  document.body.appendChild(mobile_menu)
+
+   document.body.classList.add("menu-open")
+
+
+   menu_close_link.addEventListener("click", () => {
+    mobile_menu.style.display = 'none'
+  });
+}
+
+// menuOpen()
+
+// function mobileHover(){
+//   const product = document.querySelector('#products')
+//   const product_inner_products = document.querySelector('#inner-product')
+//   product_inner_products.style.display = 'flex'
+//   alert('hi')
+  // console.log(product_inner_products)
+  // product.addEventListener("mouseover", () => {
+  //   product_inner_products.style.display = 'block'
+  // })
+// }
+// mobileHover()
+// menuOpen()
+
+// function nav(){
+//   const heading = document.querySelector('footer nav h3')
+//   const ul = document.querySelector('.customer-services')
+//   ul.style.display = 'block'
+//   console.log(heading)
+//   heading.addEventListener('click', () => {
+//     ul.style.display = 'none'
+//   })
+// }
+// nav()
+
+// {const headers = document.querySelectorAll('footer-main-end nav h3')
+// const contents = document.querySelectorAll('.accordion-content')
+// headers.forEach((header, index) => {
+//   header.addEventListener('click', () => {
+//     contents.forEach((content, i) => {
+//       if(i !== index){
+//         content.style.display = 'none'
+//       }
+//     })
+//     const content = contents[index]
+//     if(content.style.display === 'block'){
+//       content.style.display = 'none'
+//     }else{
+//       content.style.display = 'block'
+//     }
+//   })
+// })}
+
+const headers = document.querySelectorAll('.footer-main-end nav h3');
+const contents = document.querySelectorAll('.accordion-content');
+
+headers.forEach((header, index) => {
+  header.addEventListener('click', () => {
+    // close all first
+    contents.forEach((content, i) => {
+      if (i !== index) {
+        content.style.display = 'none';
+      }
+    });
+
+    // toggle clicked one
+    const content = contents[index];
+    if (content.style.display === 'block') {
+      content.style.display = 'none';
+    } else {
+      content.style.display = 'block';
+    }
+  });
+});
+// headers.forEach((header, index) => {
+//   header.addEventListener('click', () => {
+//     // close all first
+//     contents.forEach((content, i) => {
+//       if (i !== index) {
+//         content.classList.remove('active');
+//       }
+//     });
+
+//     // toggle clicked one
+//     contents[index].classList.toggle('active');
+//   });
+// });
+
+
+
+
+

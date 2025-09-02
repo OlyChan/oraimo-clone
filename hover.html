@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .main-header {
+        background-color: rgb(31, 30, 30);
+        padding: 1.5rem 2.5rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        justify-content: space-around;
+        color: white;
+      }
+      .main-header ul li {
+        display: inline;
+        margin: 0 2rem;
+      }
+      .main-header li a {
+        text-decoration: none;
+        color: white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        /* padding: 4rem 0; */
+      }
+      .header-icons a {
+        margin: 0 1rem;
+        color: white;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 2rem;
+        position: relative; /* anchor for absolute dropdowns */
+      }
+
+      nav ul li {
+        position: relative; /* so the dropdown is tied to this li */
+      }
+
+      .product-hover {
+        position: absolute;
+        top: 100%; /* sits just below the navbar item */
+        left: 0;
+        width: 100vw; /* full width mega menu */
+        height: 92vh;
+
+        background: white;
+        padding: 2rem 2.5rem;
+        gap: 2rem;
+
+        display: none; /* hidden by default */
+        z-index: 1000; /* appear above everything */
+      }
+
+      /* Show dropdown when hovering Products li */
+      nav ul li:hover .product-hover {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <a href="#"><img src="./images/oraimo logo.png" alt="logo" /></a>
+      <nav>
+        <ul>
+          <li><a href="#">Flash Sale</a></li>
+
+          <li><a href="#">Daily Deals</a></li>
+
+          <li><a href="#">Hot & New</a></li>
+          <li>
+            <a href="#" id="products" onmouseover="product()">Products</a>
+          </li>
+          <li><a href="#" id="support" onmouseover="support()">Support</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-icons">
+        <a href="#"
+          ><span class="material-symbols-outlined">apk_document</span></a
+        >
+        <a href="#"><span class="material-symbols-outlined">search</span></a>
+        <a href="#"
+          ><span class="material-symbols-outlined">shopping_cart</span></a
+        >
+        <a href="#"><span class="material-symbols-outlined">person</span></a>
+      </div>
+    </header>
+
+  </body>
+</html>

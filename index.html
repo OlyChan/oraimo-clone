@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
@@ -16,65 +19,104 @@
   </head>
   <body>
     <header class="main-header">
-      <a href="#"><img src="./images/oraimo logo.png" alt="logo" /></a>
+      <a id="header-logo" href="#"
+        ><img src="./images/oraimo logo.png" alt="logo"
+      /></a>
       <nav>
         <ul>
           <li><a href="#">Flash Sale</a></li>
           <li><a href="#">Daily Deals</a></li>
           <li><a href="#">Hot & New</a></li>
-          <li><a href="#" id="products" onmouseover="product()">Products</a></li>
+          <li>
+            <a
+              href="#"
+              id="products"
+              onmouseover="product()"
+              onclick="mobileHover()"
+              >Products</a
+            >
+            <ul id="inner-product">
+              <li><a href="#">Power</a></li>
+              <li><a href="#">Audio</a></li>
+              <li><a href="#">Smart & Office</a></li>
+              <li><a href="#">Personal Care</a></li>
+              <li><a href="#">Home Appliances</a></li>
+            </ul>
+          </li>
           <li><a href="#" id="support" onmouseover="support()">Support</a></li>
         </ul>
       </nav>
       <div class="header-icons">
-        <a href="#"
-          ><span class="material-symbols-outlined">apk_document</span></a
+        <a class="hide-on-mobile" href="#"
+          ><span class="material-symbols-outlined hide-on-mobile"
+            >apk_document</span
+          ></a
         >
         <a href="#"><span class="material-symbols-outlined">search</span></a>
         <a href="#"
           ><span class="material-symbols-outlined">shopping_cart</span></a
         >
         <a href="#"><span class="material-symbols-outlined">person</span></a>
+        <a class="menu-icon" onclick="menuOpen()" href="#"
+          ><span class="material-symbols-outlined">menu</span></a
+        >
       </div>
     </header>
     <div class="cart-open">
       <div>
         <!-- <h4>Shopping Cart</h4> -->
-
       </div>
-      
     </div>
 
-    <section class="carousel">
-      <!-- Radio buttons (slide triggers) -->
-      <input type="radio" name="slider" id="slide1" checked />
-      <input type="radio" name="slider" id="slide2" />
-      <input type="radio" name="slider" id="slide3" />
+        <!-- new -->
+    <section >
+      <div class="carousel">
+        <!-- Radio buttons -->
+        <input type="radio" name="slider1" id="slide1-1" checked />
+        <input type="radio" name="slider1" id="slide1-2" />
+        <input type="radio" name="slider1" id="slide1-3" />
 
-      <!-- Slides -->
-      <div class="slides">
-        <div class="slide" id="s1">
-          <img src="./images/O-CLUB-1920-820.webp" alt="Slide 1" />
+        <!-- Slides -->
+        <div class="slides">
+          <div class="slide"><img src="./images/O-CLUB-1920-820.webp" /></div>
+          <div class="slide">
+            <img src="./images/oraimo-spacebox-pro-presale-pc.webp" />
+          </div>
+          <div class="slide"><img src="./images/oraimo-audio-3.webp" /></div>
         </div>
-        <div class="slide" id="s2">
-          <img src="./images/oraimo-audio-3.webp" alt="Slide 2" />
-        </div>
-        <div class="slide" id="s3">
-          <img
-            src="./images/oraimo-spacebox-pro-presale-pc.webp"
-            alt="Slide 3"
-          />
+
+        <!-- Navigation Dots -->
+        <div class="nav">
+          <label for="slide1-1" class="nav-btn"></label>
+          <label for="slide1-2" class="nav-btn"></label>
+          <label for="slide1-3" class="nav-btn"></label>
         </div>
       </div>
 
-      <!-- Navigation -->
-      <div class="nav">
-        <label for="slide1" class="nav-btn"></label>
-        <label for="slide2" class="nav-btn"></label>
-        <label for="slide3" class="nav-btn"></label>
+      <!-- for mobile -->
+      <div class="carousel-m">
+        <!-- Radio buttons -->
+        <input type="radio" name="sliderm" id="slidem-1" checked />
+        <input type="radio" name="sliderm" id="slidem-2" />
+        <input type="radio" name="sliderm" id="slidem-3" />
+
+        <!-- Slides -->
+        <div class="slides">
+          <div class="slide"><img src="./images/拉各斯-停电banner-750 1040-m.webp" /></div>
+          <div class="slide">
+            <img src="./images/O-CLUB-750-1040-m.webp" />
+          </div>
+          <div class="slide"><img src="./images/oraimo-speaker-spacebox-pro-obs-682-m.webp" /></div>
+        </div>
+
+        <!-- Navigation Dots -->
+        <div class="nav">
+          <label for="slidem-1" class="nav-btn"></label>
+          <label for="slidem-2" class="nav-btn"></label>
+          <label for="slidem-3" class="nav-btn"></label>
+        </div>
       </div>
     </section>
-
 
     <section class="about-us">
       <div class="about-us-design">
@@ -94,17 +136,16 @@
     <section class="flash-sale">
       <h2 class="flash-sale-head">Flash Sale</h2>
       <div class="offer-duration">
-      <p>Ends In: </p>
-      <!-- countdown -->
-      <div id="countdown">
-      <span id="days"></span>D 
-      <span id="hours"></span>
-      <span id="minutes"></span>
-      <span id="seconds"></span>
+        <p>Ends In:</p>
+        <!-- countdown -->
+        <div id="countdown">
+          <span id="days"></span>D
+          <span id="hours"></span>
+          <span id="minutes"></span>
+          <span id="seconds"></span>
+        </div>
       </div>
-      </div>
-<!--  -->
-     
+      <!--  -->
 
       <div class="grid-products">
         <div class="product">
@@ -170,26 +211,36 @@
     </section>
 
     <section class="products-group-section">
-      <div class="products-group-section-product">
-        <p>Audio</p>
-        <img src="./images/audio.webp" alt="audio" />
-      </div>
-      <div class="products-group-section-product">
-        <p>Power</p>
-        <img src="./images/power.webp" alt="power" />
-      </div>
-      <div class="products-group-section-product">
-        <p>Smart & Office</p>
-        <img src="./images/smart.webp" alt="smart" />
-      </div>
-      <div class="products-group-section-product">
-        <p>Personal Care</p>
-        <img src="./images/personalcare.webp" alt="care" />
-      </div>
-      <div class="products-group-section-product">
-        <p>Home Appliances</p>
-        <img src="./images/homeappliances.webp" alt="homeappliances" />
-      </div>
+      <a href="#">
+        <div class="products-group-section-product">
+          <p>Audio</p>
+          <img src="./images/audio.webp" alt="audio" />
+        </div>
+      </a>
+      <a href="#">
+        <div class="products-group-section-product">
+          <p>Power</p>
+          <img src="./images/power.webp" alt="power" />
+        </div>
+      </a>
+      <a href="#">
+        <div class="products-group-section-product">
+          <p>Smart & Office</p>
+          <img src="./images/smart.webp" alt="smart" />
+        </div>
+      </a>
+      <a href="#">
+        <div class="products-group-section-product">
+          <p>Personal Care</p>
+          <img src="./images/personalcare.webp" alt="care" />
+        </div>
+      </a>
+      <a href="#">
+        <div class="products-group-section-product">
+          <p>Home Appliances</p>
+          <img src="./images/homeappliances.webp" alt="homeappliances" />
+        </div>
+      </a>
     </section>
 
     <!-- <section class="best-seller">
@@ -220,7 +271,16 @@
     </section> -->
 
     <section class="photo-only-sectiion">
-      <img src="./images/new-arrival-l.webp" alt="new-arrival" />
+      <img
+        class="photo-only-sectiion-desktop"
+        src="./images/new-arrival-l.webp"
+        alt="new-arrival"
+      />
+      <img
+        class="photo-only-sectiion-mobile"
+        src="./images/new-arrival-s.webp"
+        alt=""
+      />
     </section>
 
     <section class="new-arrival">
@@ -310,13 +370,20 @@
             </p>
           </div>
         </div>
-       
-      
       </div>
     </section>
 
     <section class="photo-only-sectiion">
-      <img src="./images/globalimg.webp" alt="new-arrival" />
+      <img
+        class="photo-only-sectiion-desktop"
+        src="./images/globalimg.webp"
+        alt="new-arrival"
+      />
+      <img
+        class="photo-only-sectiion-mobile"
+        src="./images/banner-wide-s.webp"
+        alt=""
+      />
     </section>
 
     <section class="patronize">
@@ -324,14 +391,17 @@
 
       <div class="grid-images">
         <div class="grid-item">
-          <h5>1 YEAR WARRANTY, <br>ONLY REPLACE NO REPAIR</h5>
+          <h5>1 YEAR WARRANTY, <br />ONLY REPLACE NO REPAIR</h5>
           <img src="./images/icon-1-year-d-7.svg" alt="oneyear" />
         </div>
         <div class="grid-item wide">
           <img src="./images/Africa-NO.1-en.svg" alt="no.1" />
         </div>
         <div class="grid-item">
-          <h5>BUY TO GET ORAIMO EXPLORER <br> POINTS, EXTRA POINTS FOR MEMBERS</h5>
+          <h5>
+            BUY TO GET ORAIMO EXPLORER <br />
+            POINTS, EXTRA POINTS FOR MEMBERS
+          </h5>
           <img src="./images/icon-point-d.webp" alt="oraimo-points" />
         </div>
         <div class="grid-item">
@@ -339,7 +409,7 @@
           <img src="./images/icon-cs-women-d-7.webp" alt="customer service" />
         </div>
         <div class="grid-item">
-          <h5>ORAIMO AUTHENTICITY <br>& BEST PRICE GUARANTEED</h5>
+          <h5>ORAIMO AUTHENTICITY <br />& BEST PRICE GUARANTEED</h5>
           <img src="./images/icon-authenticity-d.svg" alt="best price" />
         </div>
         <div class="grid-item">
@@ -347,11 +417,13 @@
           <img src="./images/icon-o-club-ng-d.svg" alt="club" />
         </div>
         <div class="grid-item">
-          <h5>FREE SHIPPING OVER ₦30000 in Lagos <br>DOOR TO DOOR DELIVERY</h5>
+          <h5>
+            FREE SHIPPING OVER ₦30000 in Lagos <br />DOOR TO DOOR DELIVERY
+          </h5>
           <img src="./images/icon-free-d-7.svg" alt=" freeshipping" />
         </div>
         <div class="grid-item">
-          <h5>NATIONWIDE OFFLINE AFTER-SALES <br>OUTLETS</h5>
+          <h5>NATIONWIDE OFFLINE AFTER-SALES <br />OUTLETS</h5>
           <img src="./images/icon-carlcare-service-d-7.svg" alt="carlcare" />
         </div>
       </div>
@@ -369,7 +441,7 @@
         creating memories with oraimo! #oraimo #ExploreWithoraimo spacepuds
       </p>
 
-      <div class="parent-images">
+      <!-- <div class="parent-images">
         <div class="single-img">
           <img src="./images/Post-8-oraimo.webp" alt="post8" />
         </div>
@@ -382,45 +454,79 @@
         <div class="single-img">
           <img src="./images/OH-K500.webp" alt="OH-K500" />
         </div>
+      </div> -->
+      <div class="carousel2">
+        <!-- Radio buttons -->
+        <input type="radio" name="slider2" id="slide2-1" checked />
+        <input type="radio" name="slider2" id="slide2-2" />
+        <input type="radio" name="slider2" id="slide2-3" />
+        <input type="radio" name="slider2" id="slide2-4" />
+        <input type="radio" name="slider2" id="slide2-5" />
+  
+        <!-- Slides -->
+        <div class="slides2">
+          <div class="slide2"><img src="./images/Post-8-oraimo.webp" alt="post8" /></div>
+          <div class="slide2"><img src="./images/Post-9-oraimo.webp" alt="post9" /></div>
+          <div class="slide2"><img src="./images/OH-B2N-1080.webp" alt="ohb2n" /></div>
+          <div class="slide2"><img src="./images/OH-K500.webp" alt="OH-K500" /></div>
+          <div class="slide2"><img src="./images/OHI-201A-.webp" alt="OH-K500" /></div>
+        </div>
+  
+        <!-- Navigation Dots -->
+        <div class="nav">
+          <label for="slide2-1" class="nav-btn"></label>
+          <label for="slide2-2" class="nav-btn"></label>
+          <label for="slide2-3" class="nav-btn"></label>
+          <label for="slide2-4" class="nav-btn"></label>
+          <label for="slide2-5" class="nav-btn"></label>
+        </div>
       </div>
     </section>
 
-    <footer>
-      <div class="engage">
-        <div class="follow-us-sm">
-           <h2>FOLLOW US</h2>
-           <div class="social-media-icons">
-           <a href="#"><ion-icon name="logo-instagram"></ion-icon></a> 
-           <a href="#"><ion-icon name="logo-facebook"></ion-icon></a> 
-           <a href="#"><ion-icon name="logo-twitter"></ion-icon></a> 
-           <a href="#"> <ion-icon name="logo-whatsapp"></ion-icon></a>
-           </div>
-        </div>
-       
-        <div class="app-store">
-          <div><img src="./images/app-store.svg" alt="app-icon" /></div>
-          <div>
-            <h4>Download oraimo store App</h4>
-            <h5>Get access to app exclusive offer!</h5>
-          </div>
-          <div class="download-platform">
-            <ion-icon name="play"></ion-icon>
-            <p>GET IT ON<br> <span>Google Play</span> </p>
-          </div>
-          <div class="download-platform">
-            <ion-icon name="play"></ion-icon>
-            <p>Download on the <br> <span>App Store</span> </p>
-          </div>
+    <div class="engage">
+      <div class="follow-us-sm">
+        <h2>FOLLOW US</h2>
+        <div class="social-media-icons">
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="#"> <ion-icon name="logo-whatsapp"></ion-icon></a>
         </div>
       </div>
+
+      <div class="app-store">
+        <div><img src="./images/app-store.svg" alt="app-icon" /></div>
+        <div>
+          <h4>Download oraimo store App</h4>
+          <h5>Get access to app exclusive offer!</h5>
+        </div>
+        <div class="download-platform">
+          <ion-icon name="play"></ion-icon>
+          <p>
+            GET IT ON<br />
+            <span>Google Play</span>
+          </p>
+        </div>
+        <div class="download-platform">
+          <ion-icon name="play"></ion-icon>
+          <p>
+            Download on the <br />
+            <span>App Store</span>
+          </p>
+        </div>
+      </div>
+    </div>
+    <footer>
       <div class="footer-main">
         <h1>Subscribe now and earn 500 points!</h1>
         <p class="footer-main-p">Get the Latest oraimo News and Giveaways</p>
-        <div class="form-enter"><input type="email" placeholder="Enter your Email address" />
-        <button type="submit">
-          <span class="material-symbols-outlined" > notifications </span>
-        </button></div>
-        
+        <div class="form-enter">
+          <input type="email" placeholder="Enter your Email address" />
+          <button type="submit">
+            <span class="material-symbols-outlined"> notifications </span>
+          </button>
+        </div>
+
         <div class="form-checkbox">
           <input type="checkbox" name="" id="" />
           <p>
@@ -431,61 +537,93 @@
       </div>
 
       <div class="footer-main-end">
-<div class="footer-main-end-first">
-  <h3>Customer Service</h4>
+        <nav class="footer-main-end-first">
+          <h3>Customer Service</h3>
+          <ul class="customer-services accordion-content">
+            <li>
+              <a href="#">Service Hours:</a>
+              <p>Monday-Friday 9AM to 6PM</p>
+            </li>
+            <li>
+              <a href="#">Phone:</a>
+              <p>
+                +234 818 135 3103 (First Choice) <br />
+                +234 809 604 0753
+              </p>
+            </li>
+            <li>
+              <a href="#">Email:</a>
+              <p>
+                care.ng@oraimo.com <br />deliveryissue.ng@oraimo.comb
+                <br />(First Choice for Logistics Issue)
+              </p>
+            </li>
+            <li>
+              <a href="#">Whatsapp:</a>
+              <p>+234 916 459 8060/ +234 818 642 3337</p>
+            </li>
+          </ul>
+        </nav>
 
-  <div class="info"> <h4>Service Hours: </h4>
-  <p>Monday-Friday 9AM to 6PM</p>
-  </div>
- 
- <div class="info"> <h4>Phone: </h4>
- <p>+234 818 135 3103 (First Choice) <br> +234 809 604 0753</p>
-</div>
+        <nav>
+          <h3>About</h3>
+          <ul class="accordion-content">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Where to buy</a></li>
+            <li><a href="#">O-CLUB</a></li>
+            <li><a href="#">Explorer Point Program</a></li>
+            <li><a href="#">Blogs</a></li>
+          </ul>
+        </nav>
 
- <div class="info"> <h4>Email: </h4>
- <p>care.ng@oraimo.com <br>deliveryissue.ng@oraimo.comb <br>(First Choice for Logistics Issue)</p>
-</div>
-  
- <div class="info"><h4>Whatsapp: </h4>
- <p>+234 916 459 8060/ +234 818 642 3337</p>
- </div>
+        <nav>
+          <h3>Terms</h3>
+          <ul class="accordion-content">
+            <li><a href="#">Warranty</a></li>
+            <li><a href="#">Shipping & Delivery</a></li>
+            <li><a href="#">Return Fund Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </nav>
 
-</div>
-
-<nav>
-  <h3>About</h3>
-  <ul>
- <li><a href="#">About Us</a></li>
- <li><a href="#">Where to buy</a></li>
- <li><a href="#">O-CLUB</a></li>
- <li><a href="#">Explorer Point Program</a></li>
- <li><a href="#">Blogs</a></li>
-  </ul>
-</nav>
-<nav>
-  <h3>Terms</h3>
-  <ul>
- <li><a href="#">Warranty</a></li>
- <li><a href="#">Shipping & Delivery</a></li>
- <li><a href="#">Return Fund Policy</a></li>
- <li><a href="#">Terms & Conditions</a></li>
- <li><a href="#">Privacy Policy</a></li>
-  </ul>
-</nav>
-<nav>
-  <h3>Get Help</h3>
-  <ul>
- <li><a href="#">Track Order</a></li>
- <li><a href="#">Visit Carlcare</a></li>
- <li><a href="#">Contact Us</a></li>
- <li><a href="#">Online Shopping Guide</a></li>
- <li><a href="#">Product Authentication</a></li>
-  </ul>
-</nav>
+        <nav>
+          <h3>Get Help</h3>
+          <ul class="accordion-content">
+            <li><a href="#">Track Order</a></li>
+            <li><a href="#">Visit Carlcare</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Online Shopping Guide</a></li>
+            <li><a href="#">Product Authentication</a></li>
+          </ul>
+        </nav>
       </div>
     </footer>
     <section class="oraimo-footer">
-      <img src="./images/logo2 (1).png" alt="logo">
+      <div class="app-store in-footer">
+        <div><img src="./images/app-store.svg" alt="app-icon" /></div>
+        <div>
+          <h4>Download oraimo store App</h4>
+          <h5>Get access to app exclusive offer!</h5>
+        </div>
+        <div class="apps">
+          <div class="download-platform">
+            <ion-icon name="play"></ion-icon>
+            <p>
+              GET IT ON<br />
+              <span>Google Play</span>
+            </p>
+          </div>
+          <div class="download-platform">
+            <ion-icon name="play"></ion-icon>
+            <p>
+              Download on the <br />
+              <span>App Store</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      <img src="./images/logo2 (1).png" alt="logo" />
       <h5>© 2013-2025 oraimo Copyright.</h5>
     </section>
     <script src="script.js"></script>
