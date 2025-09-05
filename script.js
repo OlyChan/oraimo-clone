@@ -1,3 +1,8 @@
+
+
+
+
+
 let counter = 1;
       const totalSlides = 3;
 
@@ -490,29 +495,33 @@ function menuOpen(){
   // mobile_menu.appendChild(header_nav)
   mobile_menu.appendChild(header_nav.cloneNode(true));
   main_header.appendChild(mobile_menu)
-  document.body.appendChild(mobile_menu)
+  document.body.appendChild(mobile_menu) 
 
    document.body.classList.add("menu-open")
 
-
    menu_close_link.addEventListener("click", () => {
-    mobile_menu.style.display = 'none'
+    mobile_menu.remove()
+    document.body.classList.remove("menu-open") 
   });
+
+
 }
 
-// menuOpen()
 
-// function mobileHover(){
-//   const product = document.querySelector('#products')
-//   const product_inner_products = document.querySelector('#inner-product')
-//   product_inner_products.style.display = 'flex'
-//   alert('hi')
-  // console.log(product_inner_products)
-  // product.addEventListener("mouseover", () => {
-  //   product_inner_products.style.display = 'block'
-  // })
-// }
-// mobileHover()
+function mobileProductView(el){
+  const product_inner_products = el.nextElementSibling // finds the <ul> after <a>
+
+  if(product_inner_products.style.display === 'block'){
+    product_inner_products.style.display = 'none'
+    console.log('yo-closed')
+  } else {
+    product_inner_products.style.display = 'block'
+    console.log("hey-opened")
+  }
+}
+
+
+// mobileProductView()
 // menuOpen()
 
 // function nav(){
