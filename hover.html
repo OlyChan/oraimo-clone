@@ -3,20 +3,27 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style>
       .main-header {
         background-color: rgb(31, 30, 30);
-        padding: 1.5rem 2.5rem;
+        padding: 0rem ;
         display: flex;
         align-items: center;
         position: relative;
         justify-content: space-around;
+        margin: 0;
         color: white;
       }
       .main-header ul li {
         display: inline;
-        margin: 0 2rem;
+        margin: 0 1rem;
+        padding: 2.5rem 0;
+        height: 100%;
       }
       .main-header li a {
         text-decoration: none;
@@ -25,6 +32,10 @@
         font-size: 0.9rem;
         /* padding: 4rem 0; */
       }
+      .main-header nav{
+        /* background-color: red; */
+        
+      }
       .header-icons a {
         margin: 0 1rem;
         color: white;
@@ -32,7 +43,7 @@
 
       nav ul {
         list-style: none;
-        display: flex;
+        /* display: flex; */
         gap: 2rem;
         position: relative; /* anchor for absolute dropdowns */
       }
@@ -41,25 +52,62 @@
         position: relative; /* so the dropdown is tied to this li */
       }
 
-      .product-hover {
+      /* .product-hover {
         position: absolute;
-        top: 100%; /* sits just below the navbar item */
-        left: 0;
-        width: 100vw; /* full width mega menu */
+        top: 3.5rem; 
+        left: -50vw;
+        width: 80vw; 
         height: 92vh;
 
-        background: white;
+        background: red;
         padding: 2rem 2.5rem;
         gap: 2rem;
 
-        display: none; /* hidden by default */
-        z-index: 1000; /* appear above everything */
+        display: none; 
+        z-index: 1000; 
+       animation: name duration timing-function delay iteration-count direction fill-mode; 
+         transform: scale(0.8);
+ 
       }
 
-      /* Show dropdown when hovering Products li */
+      /* Show dropdown when hovering Products li
       nav ul li:hover .product-hover {
         display: flex;
-      }
+        background-color: black;
+
+      } */
+       .product-hover {
+  position: absolute;
+  top: 6.5rem;
+  left: -50vw;
+  width: 80vw;
+  height: 92vh;
+  background: #000;
+  padding: 2rem 2.5rem;
+  gap: 2rem;
+
+  display: flex;
+
+  /* hidden by default */
+  opacity: 0;
+  transform: translateY(-20px); 
+  visibility: hidden;
+  pointer-events: none;
+
+  z-index: 1000;
+  transition: transform 0.4s ease, opacity 0.4s ease, visibility 0s linear 0.4s;
+}
+
+/* when Products is hovered */
+nav ul li:hover .product-hover,
+.product-hover:hover {
+  opacity: 1;
+  transform: translateY(0); /* slides down into place */
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
     </style>
   </head>
   <body>
@@ -74,6 +122,70 @@
           <li><a href="#">Hot & New</a></li>
           <li>
             <a href="#" id="products" onmouseover="product()">Products</a>
+            <div class="product-hover">
+              <div>
+                <h3>Power</h3>
+                <img src="./images/powerbank.webp" alt="">
+                <ul>
+                  <li><a href="#">Power Banks</a></li>
+                  <li><a href="#">iPhone Accessories</a></li>
+                  <li><a href="#">Power Station</a></li>
+                  <li><a href="#">Wall Chargers</a></li>
+                  <li><a href="#">Car Chargers</a></li>
+                  <li><a href="#">Cables</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3>Audio</h3>
+                <img src="./images/powerbank.webp" alt="">
+                <ul>
+                  <li><a href="#">Wireless Stero Earbuds</a></li>
+                  <li><a href="#">Wireless Over-Ear Headphones</a></li>
+                  <li><a href="#">Wireless Neckband Headphones</a></li>
+                  <li><a href="#">Open-Ear Headphones</a></li>
+                  <li><a href="#">Wireless Speakers</a></li>
+                  <li><a href="#">Wireless Earphones</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3>Smart & Office</h3>
+                <img src="./images/powerbank.webp" alt="">
+                <ul>
+                  <li><a href="#">Smart Watches</a></li>
+                  <li><a href="#">iPhone Accessories</a></li>
+                  <li><a href="#">Power Station</a></li>
+                  <li><a href="#">Wall Chargers</a></li>
+                  <li><a href="#">Car Chargers</a></li>
+                  <li><a href="#">Cables</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3>Personal Care</h3>
+                <img src="./images/powerbank.webp" alt="">
+                <ul>
+                  <li><a href="#">Grooming Series</a></li>
+                  <li><a href="#">Oral Care</a></li>
+                  <li><a href="#">Mirrors</a></li>
+                  <li><a href="#">Hair Dryers</a></li>
+                  <li><a href="#">Hair Styling Tools</a></li>
+                </ul>
+              </div>
+              <div>
+                <h3>Home Appliances</h3>
+                <img src="./images/powerbank.webp" alt="">
+                <ul>
+                  <li><a href="#">Vacuums</a></li>
+                  <li><a href="#">Kitchen Appliances</a></li>
+                  <li><a href="#">Blenders & Grinders</a></li>
+                  <li><a href="#">Fans</a></li>
+                  <li><a href="#">Humidifiers</a></li>
+                  <li><a href="#">Electric Kettles</a></li>
+                  <li><a href="#">Lightings</a></li>
+                  <li><a href="#">Baby Feeding</a></li>
+                  <li><a href="#">Steamer & Irons</a></li>
+                </ul>
+              </div>
+            </div>
           </li>
           <li><a href="#" id="support" onmouseover="support()">Support</a></li>
         </ul>
